@@ -2,14 +2,23 @@
   "name": "relax-audio-app",
   "version": "1.0.0",
   "description": "app with webpack",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx webpack --mode development",
+    "build": "npx webpack --config webpack.config.prod.js",
+    "build:dev": "npx webpack --config webpack.config.dev.js"
   },
   "keywords": [
     "webpack",
     "js"
   ],
   "author": "valeriy",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1",
+    "webpack-merge": "^5.8.0"
+  }
 }
