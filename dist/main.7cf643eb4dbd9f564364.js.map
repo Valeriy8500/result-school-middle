@@ -1,0 +1,1 @@
+{"version":3,"file":"main.7cf643eb4dbd9f564364.js","mappings":"mBAEAA,QAAQC,IAAI,W","sources":["webpack:///./index.js"],"sourcesContent":["import './index.scss';\n\nconsole.log('index.js');"],"names":["console","log"],"sourceRoot":""}
