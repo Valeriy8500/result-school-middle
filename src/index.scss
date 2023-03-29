@@ -22,7 +22,6 @@
 
 .cards-template:hover {
   cursor: pointer;
-  opacity: 0.9;
 }
 
 .page {
@@ -77,4 +76,11 @@
 .audio-cards__icon {
   width: 50px;
   height: 50px;
+}
+
+.controller {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }

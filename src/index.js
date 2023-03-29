@@ -12,6 +12,7 @@ function createAudioCard(item) {
   const audioCard = cardElement.querySelector('.audio-cards__card');
   const cardIcon = cardElement.querySelector('.audio-cards__icon');
   const audio = cardElement.querySelector('.audio-cards__audio');
+  const controller = document.querySelector('.volume-slider');
   const pause = 'images/pause.svg';
 
   audio.src = item.audioPath;
@@ -21,6 +22,10 @@ function createAudioCard(item) {
   audioCard.style.backgroundImage = item.backgroundPath;
 
   function playAudio() {
+    controller.addEventListener("input", () => {
+      audio.volume = controller.value;
+    });
+
     if (switchingFlag === 0) {
       audio.play();
       cardIcon.src = pause;
