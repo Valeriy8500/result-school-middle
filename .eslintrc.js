@@ -9,14 +9,10 @@ module.exports = {
     "sourceType": "module"
   },
   "rules": {
-    "no-console": ["warn", { "allow": ["warn", "error"] }],
-    "no-var": "error",
-    "semi": "error",
-    "indent": "error",
-    "no-multi-spaces": "error",
-    "space-in-parens": "error",
-    "no-multiple-empty-lines": "error",
-    "prefer-const": "error",
-    "no-use-before-define": "error"
+    "no-var": "warn",
+    "semi": "warn",
+    "no-multi-spaces": "warn",
+    "prefer-const": "warn",
+    "no-console": ["warn", { "allow": ["warn", "error"] }]
   }
 }

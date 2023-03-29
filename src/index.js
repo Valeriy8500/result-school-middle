@@ -7,7 +7,6 @@ const audioCardTemplate = document.querySelector('.template-audio-card').content
 const listAudioCards = document.querySelector('.audio-cards');
 
 let switchingFlag = 0;
-console.log('выв');
 
 function createAudioCard(item) {
   const cardElement = audioCardTemplate.cloneNode(true);
@@ -54,11 +53,11 @@ function createAudioCard(item) {
       switchingFlag = item.id;
     }
     page.style.backgroundImage = item.backgroundPath;
-  };
+  }
 
   audioCard.addEventListener('click', playAudio);
   return cardElement;
-};
+}
 
 cardsInfo.forEach((item) => {
   listAudioCards.append(createAudioCard(item));
