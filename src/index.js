@@ -2,17 +2,18 @@ import cardsInfo from './data';
 import './index.scss';
 
 const page = document.querySelector('.page');
+const controller = document.querySelector('.volume-slider');
 const audioCardTemplate = document.querySelector('.template-audio-card').content.querySelector('.audio-cards__container');
 const listAudioCards = document.querySelector('.audio-cards');
 
 let switchingFlag = 0;
+console.log('выв');
 
 function createAudioCard(item) {
   const cardElement = audioCardTemplate.cloneNode(true);
   const audioCard = cardElement.querySelector('.audio-cards__card');
   const cardIcon = cardElement.querySelector('.audio-cards__icon');
   const audio = cardElement.querySelector('.audio-cards__audio');
-  const controller = document.querySelector('.volume-slider');
   const pause = 'images/pause.svg';
 
   audio.src = item.audioPath;
