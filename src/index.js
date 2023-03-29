@@ -64,4 +64,3 @@ cardsInfo.forEach((item) => {
 });
 
 
-
