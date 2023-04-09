@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url(./fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.cards-template {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards-template:hover {
+  cursor: pointer;
+}
+
+.page {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #FFFFFF;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  background-image: url(images/summer-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(5px);
+}
+
+.content {
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.header__title {
+  width: 100%;
+  text-align: center;
+  color: #ef7332;
+  font-weight: 700;
+  font-size: 55px;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.audio-cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.audio-cards__container {
+  width: 200px;
+  height: 200px;
+}
+
+.audio-cards__icon {
+  width: 50px;
+  height: 50px;
+}
+
+.controller {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
