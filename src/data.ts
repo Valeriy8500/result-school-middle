@@ -1,4 +1,12 @@
-export default [
+export interface CardInfo {
+  iconPath: string;
+  iconAlt: string;
+  backgroundPath: string;
+  audioPath: string;
+  id: number;
+}
+
+export const cardsInfo: CardInfo[] = [
   {
     iconPath: "images/sun.svg",
     iconAlt: 'sun icon',
