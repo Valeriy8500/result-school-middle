@@ -45,13 +45,15 @@ function createAudioCard(item: CardInfo): HTMLElement {
     } else {
       const currentAudio = document.getElementById(`${switchingFlag}`) as HTMLAudioElement;
       const allIcons: NodeListOf<HTMLImageElement> = document.querySelectorAll('.audio-cards__icon');
-      allIcons.forEach((i, idx) => {
-        if (switchingFlag - 1 === idx) {
-          i.src = cardsInfo[idx].iconPath;
-        }
-      });
+      if (allIcons.length) {
+        allIcons.forEach((item, idx) => {
+          if (switchingFlag - 1 === idx) {
+            item.src = cardsInfo[idx].iconPath;
+          }
+        });
+      }
       cardIcon.src = pause;
-      currentAudio.pause();
+      currentAudio.pause()
       audio.play();
       switchingFlag = item.id;
     }
