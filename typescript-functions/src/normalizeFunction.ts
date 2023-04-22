@@ -1,4 +1,5 @@
 type MainData = { id: string, title: string, body: string };
+type Id = string;
 
 interface ResultDataById {
   [key: string]: MainData;
@@ -6,7 +7,7 @@ interface ResultDataById {
 
 interface ResultData {
   byId: ResultDataById;
-  allIds: string[];
+  allIds: Id[];
 }
 
 const posts: Array<MainData> = [
@@ -49,7 +50,7 @@ const posts: Array<MainData> = [
 
 const normalizeData = (data: Array<MainData>): ResultData => {
   const byId: ResultDataById = {};
-  const allIds: string[] = [];
+  const allIds: Id[] = [];
 
   data.forEach((item: MainData) => {
     byId[item.id] = { id: item.id, title: item.title, body: item.body };
