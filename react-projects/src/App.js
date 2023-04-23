@@ -1,8 +1,15 @@
 import React from 'react';
 import { useFetch } from './hooks/useFetch';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import { useHover } from './hooks/useHover';
 
 const url = 'https://jsonplaceholder.typicode.com/posts';
+
+const style = {
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column'
+}
 
 // // Task 1
 // function App() {
@@ -36,29 +43,42 @@ const url = 'https://jsonplaceholder.typicode.com/posts';
 
 // export default App;
 
-// Task 2
-function App() {
-  const [token, { setItem, removeItem }] = useLocalStorage('token');
+// // Task 2
+// function App() {
+//   const [token, { setItem, removeItem }] = useLocalStorage('token');
 
-  const mainStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'column'
-  }
+//   const mainStyle = {
+//     display: 'flex',
+//     alignItems: 'center',
+//     flexDirection: 'column'
+//   }
+
+//   return (
+//     <div style={mainStyle}>
+//       <p>Твой токен: {token}</p>
+//       <div style={mainStyle}>
+//         <button
+//           onClick={() => setItem('new-token')}
+//           style={{ marginBottom: '5px' }}>
+//           Задать токен
+//         </button>
+//         <button onClick={() => removeItem()}>
+//           Удалить токен
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// Task 3
+function App() {
+  const { hovered, ref } = useHover();
 
   return (
-    <div style={mainStyle}>
-      <p>Твой токен: {token}</p>
-      <div style={mainStyle}>
-        <button
-          onClick={() => setItem('new-token')}
-          style={{ marginBottom: '5px' }}>
-          Задать токен
-        </button>
-        <button onClick={() => removeItem()}>
-          Удалить токен
-        </button>
-      </div>
+    <div ref={ref} style={style}>
+      {hovered ? 'На меня навели мышку' : 'Наведи мышкой на меня'}
     </div>
   );
 }
