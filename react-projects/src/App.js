@@ -2,6 +2,7 @@ import React from 'react';
 import { useFetch } from './hooks/useFetch';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useHover } from './hooks/useHover';
+import { useViewportSize } from './hooks/useViewportSize';
 
 const url = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -72,13 +73,26 @@ const style = {
 
 // export default App;
 
-// Task 3
+// // Task 3
+// function App() {
+//   const { hovered, ref } = useHover();
+
+//   return (
+//     <div ref={ref} style={style}>
+//       {hovered ? 'На меня навели мышку' : 'Наведи мышкой на меня'}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// Task 4
 function App() {
-  const { hovered, ref } = useHover();
+  const { height, width } = useViewportSize();
 
   return (
-    <div ref={ref} style={style}>
-      {hovered ? 'На меня навели мышку' : 'Наведи мышкой на меня'}
+    <div style={style}>
+      Width: {width}, height: {height}
     </div>
   );
 }
