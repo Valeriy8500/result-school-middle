@@ -3,6 +3,7 @@ import { useFetch } from './hooks/useFetch';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useHover } from './hooks/useHover';
 import { useViewportSize } from './hooks/useViewportSize';
+import { useWindowScroll } from './hooks/useWindowScroll';
 
 const url = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -86,13 +87,27 @@ const style = {
 
 // export default App;
 
-// Task 4
+// // Task 4
+// function App() {
+//   const { height, width } = useViewportSize();
+
+//   return (
+//     <div style={style}>
+//       Width: {width}, height: {height}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// Task 5
 function App() {
-  const { height, width } = useViewportSize();
+  const [scroll, scrollTo] = useWindowScroll();
 
   return (
     <div style={style}>
-      Width: {width}, height: {height}
+      <p>Scroll position x: {scroll.x}, y: {scroll.y}</p>
+      <button onClick={() => scrollTo({ y: 0 })}>Scroll to top</button>
     </div>
   );
 }
