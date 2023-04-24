@@ -4,6 +4,7 @@ import { useLocalStorage } from './hooks/useLocalStorage';
 import { useHover } from './hooks/useHover';
 import { useViewportSize } from './hooks/useViewportSize';
 import { useWindowScroll } from './hooks/useWindowScroll';
+import { useToggle } from './hooks/useToggle';
 
 const url = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -100,14 +101,34 @@ const style = {
 
 // export default App;
 
-// Task 5
+// // Task 5
+// function App() {
+//   const [scroll, scrollTo] = useWindowScroll();
+
+//   return (
+//     <div style={style}>
+//       <p>Scroll position x: {scroll.x}, y: {scroll.y}</p>
+//       <button onClick={() => scrollTo({ y: 0 })}>Scroll to top</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// Task 6
 function App() {
-  const [scroll, scrollTo] = useWindowScroll();
+  const [value, toggle] = useToggle(['blue', 'orange', 'cyan', 'teal', 'black']);
+
+  const btnStyle = {
+    width: '150px',
+    height: '30px'
+  };
 
   return (
     <div style={style}>
-      <p>Scroll position x: {scroll.x}, y: {scroll.y}</p>
-      <button onClick={() => scrollTo({ y: 0 })}>Scroll to top</button>
+      <button onClick={() => toggle()} style={btnStyle}>
+        {typeof value === 'boolean' ? value.toString() : value}
+      </button>
     </div>
   );
 }
