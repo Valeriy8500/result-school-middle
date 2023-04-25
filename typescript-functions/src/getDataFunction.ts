@@ -9,10 +9,7 @@ interface DataFromRequest {
 }
 
 const getData = (url: string): Promise<DataFromRequest[]> => {
-  const res = fetch(url);
-  const data: Promise<DataFromRequest[]> = res.then((data) => data.json());
-
-  return data;
+  return fetch(url).then((data) => data.json());
 };
 
 getData(COMMENTS_URL)

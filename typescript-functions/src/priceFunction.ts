@@ -5,8 +5,8 @@ interface TotalPriceParam {
   months: number;
 }
 
-const totalPrice = ({ price, discount, isInstallment, months }: TotalPriceParam): number | string => {
-  let finalPrice: number | string = price;
+const totalPrice = ({ price, discount, isInstallment, months }: TotalPriceParam): number => {
+  let finalPrice: number = price;
 
   if (price && price > 0) {
     if (months && months > 0 && isInstallment) {
@@ -14,13 +14,13 @@ const totalPrice = ({ price, discount, isInstallment, months }: TotalPriceParam)
     } else if (months && months > 0 && !isInstallment) {
       finalPrice = price - (price / 100 * discount);
     } else {
-      finalPrice = 'Количество месяцев должно быть не меньше 0';
+      throw new Error('Количество месяцев должно быть не меньше 0');
     }
   } else {
-    finalPrice = 'Цена должна быть больше 0';
+    throw new Error('Цена должна быть больше 0');
   }
 
   return finalPrice;
 };
 
-console.log(totalPrice({ price: 500, discount: 30, isInstallment: true, months: 3 }));
+console.log(totalPrice({ price: 500, discount: 30, isInstallment: true, months: -1 }));
