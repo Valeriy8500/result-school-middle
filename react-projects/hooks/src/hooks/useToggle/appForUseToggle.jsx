@@ -2,7 +2,7 @@ import React from 'react';
 import { useToggle } from './useToggle';
 import { style, btnStyle } from '../../constans';
 
-function UseToggleApp() {
+function AppForUseToggle() {
   const [value, toggle] = useToggle(['blue', 'orange', 'cyan', 'teal', 'black']);
 
   return (
@@ -15,4 +15,4 @@ function UseToggleApp() {
   );
 }
 
-export default UseToggleApp;
+export default AppForUseToggle;
