@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import { style } from '../../constans';
 
-function UseLocalStorageApp() {
+function AppForUseLocalStorage() {
   const [token, { setItem, removeItem }] = useLocalStorage('token');
 
   return (
@@ -23,4 +23,4 @@ function UseLocalStorageApp() {
   );
 }
 
-export default UseLocalStorageApp;
+export default AppForUseLocalStorage;

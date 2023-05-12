@@ -4,7 +4,7 @@ import { style } from '../../constans';
 
 const url = 'https://jsonplaceholder.typicode.com/posts';
 
-function UseFetchApp() {
+function AppForUseFetch() {
   const { data, isLoading, error, refetch } = useFetch(url);
 
   return (
@@ -28,4 +28,4 @@ function UseFetchApp() {
   );
 }
 
-export default UseFetchApp;
+export default AppForUseFetch;

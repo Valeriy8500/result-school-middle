@@ -2,7 +2,7 @@ import React from 'react';
 import { useViewportSize } from './useViewportSize';
 import { style } from '../../constans';
 
-function UseViewportSizeApp() {
+function AppForUseViewportSize() {
   const { height, width } = useViewportSize();
 
   return (
@@ -13,4 +13,4 @@ function UseViewportSizeApp() {
   );
 }
 
-export default UseViewportSizeApp;
+export default AppForUseViewportSize;

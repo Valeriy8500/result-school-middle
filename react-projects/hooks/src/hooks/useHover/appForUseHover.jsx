@@ -2,7 +2,7 @@ import React from 'react';
 import { useHover } from './useHover';
 import { style } from '../../constans';
 
-function UseHoverApp() {
+function AppForUseHover() {
   const { hovered, ref } = useHover();
 
   return (
@@ -13,4 +13,4 @@ function UseHoverApp() {
   );
 }
 
-export default UseHoverApp;
+export default AppForUseHover;

@@ -2,7 +2,7 @@ import React from 'react';
 import { useWindowScroll } from './useWindowScroll';
 import { style } from '../../constans';
 
-function UseWindowScrollApp() {
+function AppForUseWindowScroll() {
   const [scroll, scrollTo] = useWindowScroll();
 
   return (
@@ -14,4 +14,4 @@ function UseWindowScrollApp() {
   );
 }
 
-export default UseWindowScrollApp;
+export default AppForUseWindowScroll;
