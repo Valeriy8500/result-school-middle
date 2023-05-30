@@ -13,7 +13,8 @@ const Input = ({
   description,
   error,
   variant,
-  withAsterisk
+  withAsterisk,
+  required
 }) => {
 
   const getClassName = () => {
@@ -48,6 +49,7 @@ const Input = ({
         type={type}
         className={getClassName()}
         placeholder={placeholder}
+        required={required}
       />
       {error && <span className='error-description'>{error}</span>}
     </div>

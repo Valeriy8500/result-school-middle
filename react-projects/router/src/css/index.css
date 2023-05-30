@@ -10,6 +10,8 @@
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .navigation-panel {
@@ -55,6 +57,9 @@
 
 .title {
   color: white;
+  text-align: start;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .nav-container_navlink {
@@ -155,15 +160,10 @@
   margin: 0;
 }
 
-.title {
-  text-align: center;
-  color: white;
-}
-
 .form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-self: flex-start;
 }
 
 .input {
@@ -180,9 +180,19 @@
   color: white;
   border-radius: 5px;
   border: 3px solid gray;
+  width: 70px;
+  align-self: center;
 }
 
 .button:hover {
   cursor: pointer;
   opacity: 0.6;
+}
+
+.signin,
+.signin>.active {
+  color: #04b27c;
+  text-decoration: none;
+  border: 1px solid #04b27c;
+  padding: 5px;
 }

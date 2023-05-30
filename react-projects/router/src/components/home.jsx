@@ -1,14 +1,18 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { AuthStatus } from "./authStatus";
 
 const Home = () => {
+  const location = useLocation();
+
+  console.log('location: ', location);
+
   return (
-    <>
+    <div className="home">
       <h2 className="main-title">Добро пожаловать во вселенную Рика и Морти!</h2>
       <AuthStatus />
-      <NavLink to="/signin">Зарегистрироваться</NavLink>
-    </>
+      <NavLink to="/signin" className="signin">Зарегистрироваться</NavLink>
+    </div>
   );
 }
 

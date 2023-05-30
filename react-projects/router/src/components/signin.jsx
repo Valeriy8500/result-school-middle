@@ -32,8 +32,11 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h3>Для работы приложения нужно зарегистрироваться:</h3>
+    <>
+      {
+        location.state.from === "/signin"
+          ? null : <h3 className="title">Для работы приложения нужно зарегистрироваться:</h3>
+      }
       <form
         className='form'
         onSubmit={e => onSubmit(e, value)}
@@ -48,6 +51,7 @@ const Login = () => {
           placeholder=' имя'
           label='Введите имя'
           withAsterisk={true}
+          required
         />
         <Input
           value={value.password}
@@ -59,11 +63,12 @@ const Login = () => {
           placeholder=' password'
           label='Введите пароль'
           withAsterisk={true}
+          required
         />
 
         <button type="submit" className='button'>Войти</button>
       </form>
-    </div>
+    </>
   )
 }
 

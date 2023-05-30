@@ -8,8 +8,7 @@ export function AuthStatus() {
     return <h3 className="title">Для работы приложения нужно зарегистрироваться:</h3>
   }
 
-  console.log('auth.user: ', auth.user);
   return (
-    <h3 className="title">Добро пожаловать {auth.user.name}</h3>
+    <h3 className="title">Приветствуем тебя {auth.user.name}</h3>
   );
 }
