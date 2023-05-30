@@ -3,6 +3,7 @@ import CharactersCard from "./charactersCard";
 import EpisodeCard from "./episodeCard";
 import LocationCard from "./locationCard";
 import NotFound from "./notFound";
+import Home from "./home";
 import { charactersData } from "../data/charactersData";
 import { episodeData } from "../data/episodeData";
 import { locationData } from "../data/locationData";
@@ -13,7 +14,7 @@ const BaseList = ({ page }) => {
   const list = React.useMemo(() => {
     if (page === "home") {
       return (
-        <h2 className="main-title">Добро пожаловать во вселенную Рика и Морти!</h2>
+        <Home />
       );
     } else if (page === "characters") {
       const charactersList = charactersData.map((item) => {

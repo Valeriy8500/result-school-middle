@@ -10,7 +10,7 @@ const NotFound = ({ page }) => {
         navigate('/');
       }, 1000);
     }
-  }, []);
+  }, [navigate, page]);
 
   return (<h1 className={page ? "not-found-default" : "not-found"}>Not found</h1>)
 };
