@@ -1,0 +1,39 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.input-description {
+  font-size: small;
+  color: #b5b6ce;
+  margin-bottom: 5px;
+}
+
+.error-input {
+  border: 1px solid red;
+}
+
+.error-description {
+  color: red;
+  font-size: small;
+  margin-bottom: 5px;
+}
+
+.error-placeholder::placeholder {
+  color: red;
+}
+
+.filled-input {
+  background-color: #f1f3f5;
+  border: none;
+}
+
+.unstyled-input {
+  border: none;
+}
