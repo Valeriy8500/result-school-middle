@@ -1,15 +1,38 @@
-import React from "react";
-import CharactersCard from "./charactersCard";
-import EpisodeCard from "./episodeCard";
-import LocationCard from "./locationCard";
-import NotFound from "./notFound";
-import Home from "./home";
-import { charactersData } from "../data/charactersData";
-import { episodeData } from "../data/episodeData";
-import { locationData } from "../data/locationData";
+import React, { lazy } from "react";
 import { NavLink, Routes, Route } from "react-router-dom";
+import { useListElements } from "./useListElements";
 
-const BaseList = ({ page }) => {
+const CharactersCard = lazy(() => import("./charactersCard"));
+const EpisodeCard = lazy(() => import("./episodeCard"));
+const LocationCard = lazy(() => import("./locationCard"));
+const NotFound = lazy(() => import("./notFound"));
+const Home = lazy(() => import("./home"));
+
+export const BaseList = ({ page, url, pageNumber, setPageNumber }) => {
+  const observer = React.useRef();
+
+  const {
+    loading,
+    elements,
+    hasMore
+  } = useListElements(url, pageNumber);
+
+  const lastNodeRef = React.useCallback((node) => {
+    if (observer.current) {
+      observer.current.disconnect();
+    }
+
+    observer.current = new IntersectionObserver((entries) => {
+      // проверяем, виден ли последний элемент на экране
+      if (entries[0].isIntersecting && hasMore) {
+        setPageNumber(prev => prev + 1);
+      }
+    });
+
+    if (node) {
+      observer.current.observe(node);
+    }
+  }, [hasMore, setPageNumber]);
 
   const list = React.useMemo(() => {
     if (page === "home") {
@@ -17,59 +40,101 @@ const BaseList = ({ page }) => {
         <Home />
       );
     } else if (page === "characters") {
-      const charactersList = charactersData.map((item) => {
-        return (
-          <NavLink
-            to={`/characters/${item.id}`}
-            key={item.name}
-            className="nav-container_navlink"
-            style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
-          >
-            <span>{item.name}</span>
-          </NavLink>
-        )
+      const charactersList = elements.map((item, idx) => {
+        if (elements.length === idx + 1) {
+          return (
+            <NavLink
+              to={`/characters/${item.id}`}
+              key={item.id}
+              className="nav-container_navlink"
+              style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
+              ref={lastNodeRef}
+            >
+              <span>{item.name}</span>
+            </NavLink>
+          )
+        } else {
+          return (
+            <NavLink
+              to={`/characters/${item.id}`}
+              key={item.id}
+              className="nav-container_navlink"
+              style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
+            >
+              <span>{item.name}</span>
+            </NavLink>
+          )
+        }
       });
       return (
         <>{charactersList}</>
       )
     } else if (page === "episode") {
-      const episodeList = episodeData.map((item) => {
-        return (
-          <NavLink
-            to={`/episode/${item.id}`}
-            key={item.name}
-            className="nav-container_navlink"
-            style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
-          >
-            <span>{item.name}</span>
-          </NavLink>
-        )
+      const episodeList = elements.map((item, idx) => {
+        if (elements.length === idx + 1) {
+          return (
+            <NavLink
+              to={`/episode/${item.id}`}
+              key={item.id}
+              className="nav-container_navlink"
+              style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
+              ref={lastNodeRef}
+            >
+              <span>{item.name}</span>
+            </NavLink>
+          )
+        } else {
+          return (
+            <NavLink
+              to={`/episode/${item.id}`}
+              key={item.id}
+              className="nav-container_navlink"
+              style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
+            >
+              <span>{item.name}</span>
+            </NavLink>
+          )
+        }
       });
       return (
         <>{episodeList}</>
       )
     } else if (page === "location") {
-      const locationList = locationData.map((item) => {
-        return (
-          <NavLink
-            to={`/location/${item.id}`}
-            key={item.name}
-            className="nav-container_navlink"
-            style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
-          >
-            <span>{item.name}</span>
-          </NavLink>
-        )
+      const locationList = elements.map((item, idx) => {
+        if (elements.length === idx + 1) {
+          return (
+            <NavLink
+              to={`/location/${item.id}`}
+              key={item.id}
+              className="nav-container_navlink"
+              style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
+              ref={lastNodeRef}
+            >
+              <span>{item.name}</span>
+            </NavLink>
+          )
+        } else {
+          return (
+            <NavLink
+              to={`/location/${item.id}`}
+              key={item.id}
+              className="nav-container_navlink"
+              style={({ isActive }) => isActive ? { color: '#9d97f8' } : { color: 'white' }}
+            >
+              <span>{item.name}</span>
+            </NavLink>
+          )
+        }
       });
       return (
         <>{locationList}</>
       )
     }
-  }, [page]);
+  }, [page, elements, lastNodeRef]);
 
   const routes = React.useMemo(() => {
     if (page === "characters") {
-      const charactersRoutes = charactersData.map((item) => {
+      const charactersRoutes = elements.map((item) => {
         return (
           <Route
             key={item.id}
@@ -93,9 +158,7 @@ const BaseList = ({ page }) => {
           <Route
             index
             element={
-              <div style={{ color: "white", marginLeft: "20px" }}>
-                Выберите элемент
-              </div>
+              !loading && <div className="tooltip">Выберите элемент</div>
             }
           />
           {charactersRoutes}
@@ -103,7 +166,7 @@ const BaseList = ({ page }) => {
         </Routes>
       )
     } else if (page === "episode") {
-      const episodeRoutes = episodeData.map((item) => {
+      const episodeRoutes = elements.map((item) => {
         return (
           <Route
             key={item.id}
@@ -124,9 +187,7 @@ const BaseList = ({ page }) => {
           <Route
             index
             element={
-              <div style={{ color: "white", marginLeft: "20px" }}>
-                Выберите элемент
-              </div>
+              !loading && <div className="tooltip">Выберите элемент</div>
             }
           />
           {episodeRoutes}
@@ -134,7 +195,7 @@ const BaseList = ({ page }) => {
         </Routes>
       )
     } else if (page === "location") {
-      const locationRoutes = locationData.map((item) => {
+      const locationRoutes = elements.map((item) => {
         return (
           <Route
             key={item.id}
@@ -155,9 +216,7 @@ const BaseList = ({ page }) => {
           <Route
             index
             element={
-              <div style={{ color: "white", marginLeft: "20px" }}>
-                Выберите элемент
-              </div>
+              !loading && <div className="tooltip">Выберите элемент</div>
             }
           />
           {locationRoutes}
@@ -165,16 +224,15 @@ const BaseList = ({ page }) => {
         </Routes>
       )
     }
-  }, [page]);
+  }, [page, elements, loading]);
 
   return (
     <div className="baselist">
       <div className={page === "home" ? "nav-container-default" : "nav-container"}>
         {list}
+        {loading && <span className="loading">Loading...</span>}
       </div>
       {routes}
     </div>
   )
 };
-
-export default BaseList;

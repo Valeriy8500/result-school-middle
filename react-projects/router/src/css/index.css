@@ -67,7 +67,7 @@
   text-decoration: none;
   background-color: #303030;
   width: 350px;
-  height: 30px;
+  height: 45px;
   border-bottom: 1px solid #474646;
   display: flex;
   align-items: center;
@@ -94,6 +94,9 @@
   border-radius: 10px;
   height: 220px;
   width: 450px;
+  position: fixed;
+  right: 33%;
+  left: 42%;
 }
 
 .characters-card-container_img {
@@ -126,6 +129,9 @@
   width: 300px;
   padding: 0px 20px 10px 10px;
   box-sizing: border-box;
+  position: fixed;
+  right: 33%;
+  left: 42%;
 }
 
 .episode-card-container_el {
@@ -143,6 +149,9 @@
   width: 300px;
   padding: 0px 20px 10px 10px;
   box-sizing: border-box;
+  position: fixed;
+  right: 33%;
+  left: 42%;
 }
 
 .location-card-container_el {
@@ -195,4 +204,19 @@
   text-decoration: none;
   border: 1px solid #04b27c;
   padding: 5px;
+}
+
+.error-message {
+  color: white;
+  font-size: x-large;
+}
+
+.tooltip {
+  color: white;
+  margin-left: 20px;
+}
+
+.loading {
+  color: #04b27c;
+  font-size: x-large;
 }
