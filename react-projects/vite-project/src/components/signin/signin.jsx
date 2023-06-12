@@ -1,7 +1,8 @@
 import React from 'react';
-import Input from '../customInput/customInput';
 import { useAuth } from '../../context/authProvider';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { TextInput } from '@mantine/core';
+import { Button } from '@mantine/core';
 
 const Login = () => {
   const [value, setValue] = React.useState({
@@ -41,32 +42,32 @@ const Login = () => {
         className='form'
         onSubmit={e => onSubmit(e, value)}
       >
-        <Input
+        <TextInput
           value={value.name}
           onChange={onChange}
           name='name'
           disabled={false}
           type='text'
           className='input'
-          placeholder=' имя'
+          placeholder='имя'
           label='Введите имя'
           withAsterisk={true}
           required
         />
-        <Input
+        <TextInput
           value={value.password}
           onChange={onChange}
           name='password'
           disabled={false}
           type='password'
           className='input'
-          placeholder=' password'
+          placeholder='пароль'
           label='Введите пароль'
           withAsterisk={true}
           required
         />
 
-        <button type="submit" className='button'>Войти</button>
+        <Button type="submit" className='submit-btn'>Войти</Button>
       </form>
     </>
   )

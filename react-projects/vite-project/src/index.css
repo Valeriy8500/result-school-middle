@@ -183,19 +183,16 @@
   height: 30px;
 }
 
-.button {
-  margin-top: 5px;
-  background-color: gray;
-  color: white;
-  border-radius: 5px;
-  border: 3px solid gray;
-  width: 70px;
+.submit-btn {
+  width: 100px;
   align-self: center;
+  background-color: #04b27c;
 }
 
-.button:hover {
+.submit-btn:hover {
   cursor: pointer;
   opacity: 0.6;
+  background-color: #04b27c;
 }
 
 .signin,
@@ -219,4 +216,22 @@
 .loading {
   color: #04b27c;
   font-size: x-large;
+}
+
+.mantine-TextInput-label {
+  color: white;
+}
+
+.mantine-TextInput-root {
+  margin-bottom: 40px;
+}
+
+.signin-btn {
+  background-color: #04b27c;
+}
+
+.signin-btn:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  background-color: #04b27c;
 }
