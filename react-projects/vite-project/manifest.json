@@ -1,0 +1,59 @@
+{
+  "name": "Rick&Morty APP",
+  "short_name": "R&M APP",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#1b1b1b",
+  "theme_color": "#1b1b1b",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "src/assets/icons/icon-48x48.png",
+      "type": "image/png",
+      "sizes": "48x48",
+      "purpose": "any"
+    },
+    {
+      "src": "src/assets/icons/icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "any"
+    },
+    {
+      "src": "src/assets/icons/icon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "any"
+    },
+    {
+      "src": "src/assets/icons/icon-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "any"
+    },
+    {
+      "src": "src/assets/icons/icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152",
+      "purpose": "any"
+    },
+    {
+      "src": "src/assets/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "src/assets/icons/icon-284x284.png",
+      "type": "image/png",
+      "sizes": "284x284",
+      "purpose": "any"
+    },
+    {
+      "src": "src/assets/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ]
+}
