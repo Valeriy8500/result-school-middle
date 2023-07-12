@@ -1,0 +1,237 @@
+.page {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #1b1b1b;
+}
+
+.app {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation-panel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navigation-panel_home>h2 {
+  color: white;
+}
+
+.navigation-panel_home {
+  margin-right: 50px;
+  text-decoration: none;
+}
+
+.navigation-panel_navlink {
+  margin-right: 30px;
+  color: #04b27c;
+  text-decoration: none;
+}
+
+.baselist {
+  width: 100%;
+  display: flex;
+}
+
+.nav-container {
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+}
+
+.nav-container-default {
+  width: 100%;
+}
+
+.main-title {
+  color: white;
+}
+
+.title {
+  color: white;
+  text-align: start;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.nav-container_navlink {
+  color: white;
+  text-decoration: none;
+  background-color: #303030;
+  width: 350px;
+  height: 45px;
+  border-bottom: 1px solid #474646;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container_navlink:nth-child(1) {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.nav-container_navlink:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.nav-container_navlink>span {
+  padding-left: 20px;
+}
+
+.characters-card-container {
+  display: flex;
+  background-color: #303030;
+  margin-left: 20px;
+  border-radius: 10px;
+  height: 220px;
+  width: 450px;
+  position: fixed;
+  right: 33%;
+  left: 42%;
+}
+
+.characters-card-container_img {
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.characters-card-container_info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.characters-card-container_el {
+  color: white;
+  margin-top: 10px;
+}
+
+.episode-card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #303030;
+  margin-left: 20px;
+  border-radius: 10px;
+  height: 220px;
+  width: 300px;
+  padding: 0px 20px 10px 10px;
+  box-sizing: border-box;
+  position: fixed;
+  right: 33%;
+  left: 42%;
+}
+
+.episode-card-container_el {
+  color: white;
+  margin-top: 10px;
+}
+
+.location-card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #303030;
+  margin-left: 20px;
+  border-radius: 10px;
+  height: 220px;
+  width: 300px;
+  padding: 0px 20px 10px 10px;
+  box-sizing: border-box;
+  position: fixed;
+  right: 33%;
+  left: 42%;
+}
+
+.location-card-container_el {
+  color: white;
+  margin-top: 10px;
+}
+
+.not-found {
+  color: white;
+  margin: 0px 0px 0px 20px;
+}
+
+.not-found-default {
+  color: white;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.input {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-width: 1px;
+  width: 300px;
+  height: 30px;
+}
+
+.submit-btn {
+  width: 100px;
+  align-self: center;
+  background-color: #04b27c;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  background-color: #04b27c;
+}
+
+.signin,
+.signin>.active {
+  color: #04b27c;
+  text-decoration: none;
+  border: 1px solid #04b27c;
+  padding: 5px;
+}
+
+.error-message {
+  color: white;
+  font-size: x-large;
+}
+
+.tooltip {
+  color: white;
+  margin-left: 20px;
+}
+
+.loading {
+  color: #04b27c;
+  font-size: x-large;
+}
+
+.mantine-TextInput-label {
+  color: white;
+}
+
+.mantine-TextInput-root {
+  margin-bottom: 40px;
+}
+
+.signin-btn {
+  background-color: #04b27c;
+}
+
+.signin-btn:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  background-color: #04b27c;
+}

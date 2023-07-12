@@ -1,0 +1,21 @@
+.radio-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.radio-label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.radio-description {
+  font-size: small;
+  color: #b5b6ce;
+  margin-bottom: 5px;
+}
+
+.radioBtn-block {
+  display: flex;
+}
